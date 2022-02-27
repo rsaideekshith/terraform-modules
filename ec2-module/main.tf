@@ -1,24 +1,15 @@
-data "aws_ami" "ubuntu" {
-  most_recent = true
+resource "aws_instance" "my_instance" {
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
+  count = var.instance_count
+  # ami           = data.aws_ami.ubuntu.id
+  ami           = var.ami_id
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
-
-resource "aws_instance" "mi-instance" {
-  ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
   tags = {
-    Name = "mi_instance"
+    Name = join("_", var.project, "VPC")
+    Project = var.project
   }
+
+  subnet_id = var.public_subnet_id
 }
