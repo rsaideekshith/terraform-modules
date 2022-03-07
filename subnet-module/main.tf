@@ -1,4 +1,4 @@
-resource "aws_public_subnet" "my_public_subnet" {
+resource "aws_subnet" "my_pub_subnet" {
   # value of the VPC Id that's created earlier (vpc module output)
   vpc_id = var.vpc_id
 
@@ -9,3 +9,5 @@ resource "aws_public_subnet" "my_public_subnet" {
     Project = var.project
   }
 }
+
+
