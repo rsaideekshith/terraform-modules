@@ -5,7 +5,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "project" {
-  type = string
+  type = list(string)
   default = "MYPROJECT"
 }
 
