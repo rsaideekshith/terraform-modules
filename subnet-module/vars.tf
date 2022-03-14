@@ -1,4 +1,4 @@
-variable "vpc_id" {
+variable "myvpc_id" {
   description = "VPC ID from the vpc module outputs"
   type        = string
 }
@@ -8,7 +8,3 @@ variable "subnet_cidr_block" {
   default = "10.20.0.0/28"
 }
 
-variable "project" {
-  type = string
-  default = "MYPROJECT"
-}

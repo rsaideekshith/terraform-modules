@@ -1,11 +1,11 @@
-output "myvpc_id" {
+output "vpc_id" {
   value = aws_vpc.myvpc.id
 }
 
-output "myvpc_arn" {
+output "vpc_arn" {
   value = aws_vpc.myvpc.arn
 }
 
-output "myvpc_cidr_blocks" {
+output "vpc_cidr_block" {
   value = aws_vpc.myvpc.cidr_block
 }

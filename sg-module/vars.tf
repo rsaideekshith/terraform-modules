@@ -1,9 +1,9 @@
-variable "public_subnet_cidr_block" {
-  description = "public subnet cidr block"
-  type = string
-}
-
 variable "vpc_id" {
-  description = "vpc id"
-  type = string
+  description = "VPC ID from the vpc module outputs"
+  type        = string
+}
+variable "vpc_cidr_block" {
+ descridescription = "cidr block value from the vpc module outputs"
+ type = string  
+ default = "10.20.0.0/25"
 }

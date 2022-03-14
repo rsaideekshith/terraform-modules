@@ -4,13 +4,13 @@ resource "aws_security_group" "allow_ssh" {
   description = "Allow SSH inbound traffic"
   vpc_id      = var.vpc_id
 
-  # Incoming SSH traffic to public subnet instances
+  # Incoming SSH traffic to  subnet instances
   ingress {
     description      = "SSH into VPC"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["10.20.0.0/28"]
+    cidr_blocks      = [var.vpc_cidr_block]
   }
 
   # Outgoing traffic to public

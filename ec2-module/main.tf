@@ -5,11 +5,12 @@ resource "aws_instance" "my_instance" {
   ami           = var.ami_id
 
   instance_type = var.instance_type
+  subnet_id = var.subnet_id
+  vpc_security_group_id = var.security_group_id
 
   tags = {
-    Name = join("_", var.project, "VPC")
-    Project = var.project
-  }
+    
+    Name = "Helloworld"
 
-  subnet_id = var.public_subnet_id
+  }
 }

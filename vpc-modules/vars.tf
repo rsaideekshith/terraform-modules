@@ -4,10 +4,7 @@ variable "vpc_cidr_block" {
   default = "10.20.0.0/25"
 }
 
-variable "project" {
-  type = string
-  default = "MYPROJECT"
-}
+
 
 # 10.20.0.0/25 = 128 IP's : VPC CIDR Block - (ap-south-1) - Mumbai - 3 AZ's (1a,1b,1c)
 
