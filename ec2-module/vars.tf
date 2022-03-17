@@ -5,7 +5,7 @@ variable "instance_count" {
 }
 variable "instance_type" {
   type = string 
-  default = "t2.micro"
+  default = "t2.medium"
 }
 
 variable "ami_id" {
